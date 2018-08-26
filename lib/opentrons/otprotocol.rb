@@ -1,4 +1,4 @@
-module OpenTron
+module OpenTrons
 	# This gem is not a product of OpenTrons.
 	# 
 	# This version of the gem provides some basic functionality for creating and editing OpenTrons JSON-format 

@@ -1,4 +1,4 @@
-module OpenTron
+module OpenTrons
 	class Labware
 		attr_accessor :protocol, :labware_hash, :labware_definitions
 

@@ -1,4 +1,4 @@
-# OpenTron Gem
+# OpenTrons Gem
 
 This Ruby gem provides basic functionality for creating and manipulating OpenTron JSON protocols. This gem is not a product of OpenTrons. The API is designed to mirror the official OpenTrons Python API for ease of use.
 

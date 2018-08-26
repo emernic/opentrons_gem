@@ -1,4 +1,4 @@
-module OpenTron
+module OpenTrons
 	class Commands
 		attr_accessor :protocol, :command_list
 

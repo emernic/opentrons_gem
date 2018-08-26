@@ -1,4 +1,4 @@
-module OpenTron
+module OpenTrons
 	PIPETTE_NAMES = {
 		P10_Single: "p10_single_v1",
 		P10_Multi: "p10_multi_v1",
