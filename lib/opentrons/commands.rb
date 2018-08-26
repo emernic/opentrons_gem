@@ -13,15 +13,11 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Commands:#{object_id}>"
+			"<OpenTron::Commands:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
-			s = "#{self.to_s}"
-			instance_variables.each do |var_name|
-				s << "#{var_name}=#{var_name.to_s} "
-			end
-			return s
+			to_s
 		end
 	end
 
@@ -39,6 +35,14 @@ module OpenTrons
 			as_hash["command"] = command
 			as_hash["params"] = params
 			return as_hash
+		end
+
+		def to_s
+			"<OpenTron::Command:0x#{self.__id__.to_s(16)}>"
+		end
+
+		def inspect
+			to_s
 		end
 	end
 

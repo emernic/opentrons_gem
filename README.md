@@ -19,6 +19,11 @@ Create a pipette:
 ```
 p10 = p.instruments.P10_Single(mount='left', tip_racks=[tip_rack_1])
 ```
+Create a pipette and generate tip_racks of model "tiprack-10ul" as needed:
+```
+# This is a new feature! Racks will be generated in the highest-numbered available slot.
+p10 = p.instruments.P10_Single(mount='left', tip_model="tiprack-10ul")
+```
 Pick up a tip: 
 ```
 p10.pick_up_tip()

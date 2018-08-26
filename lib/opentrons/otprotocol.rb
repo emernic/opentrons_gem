@@ -32,7 +32,7 @@ module OpenTrons
 	class OTProtocol
 		attr_accessor :protocol_schema, :robot, :designer_application, :metadata, :labware, :instruments, :commands, :trash
 		
-		def initialize(params={})
+		def initialize(params: {})
 			@protocol_schema = params.fetch(:protocol_schema, "1.0.0")
 			@robot = params.fetch(:robot, {"model" => "OT-2 Standard"})
 			@designer_application = params.fetch(:designer_application, {})
@@ -46,7 +46,7 @@ module OpenTrons
 			@commands = params.fetch(:commands, Commands.new(self))
 		end
 
-		def to_hash(check_validity=true)
+		def to_hash(check_validity: true)
 			# Returns entire protocol as an OT-protocol-format hash (which can then be converted to json).
 			protocol_hash = {}
 
@@ -64,21 +64,17 @@ module OpenTrons
 			return protocol_hash
 		end
 
-		def to_json(check_validity=true)
+		def to_json(check_validity: true)
 			#converts protocol to a JSON-formatted string
 			return self.to_hash.to_json
 		end
 
 		def to_s
-			"<OpenTron::OTProtocol:#{object_id}>"
+			"<OpenTron::OTProtocol:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
-			s = "#{self.to_s} "
-			instance_variables.each do |var_name|
-				s << "#{var_name}=#{var_name.to_s} "
-			end
-			return s
+			to_s
 		end
 	end
 end

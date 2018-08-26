@@ -29,6 +29,12 @@ module OpenTrons
 			return labware_item
 		end
 
+		def free_slots
+			slots = (1..12).to_a.map{|x| x.to_s}
+			taken_slots = labware_hash.map {|key, item| item.slot}
+			return slots.select{|x| !(taken_slots.include? x)}
+		end
+
 		# Returns a pure hash of hashes.
 		def to_hash
 			as_hash = {}
@@ -43,13 +49,8 @@ module OpenTrons
 		end
 
 		def inspect
-			s = "#{self.to_s}"
-			instance_variables.each do |var_name|
-				s << "#{var_name}=#{var_name.to_s} "
-			end
-			return s
+			to_s
 		end
-
 	end
 
 	class LabwareItem
@@ -57,7 +58,7 @@ module OpenTrons
 
 		def initialize(labware, model, slot, display_name)
 			if labware.labware_hash.map {|key, item| item.slot}.include? slot
-				raise ArgumentError "Cannot place #{display_name} in slot #{slot} (already occupied)."
+				raise ArgumentError.new "Cannot place #{display_name} in slot #{slot} (already occupied)."
 			end
 
 			@labware = labware
@@ -93,7 +94,7 @@ module OpenTrons
 				end
 			end
 
-			raise ArgumentError "wells must be specified as Integer or String, not #{location.class}"
+			raise ArgumentError.new "wells must be specified as Integer or String, not #{location.class}"
 		end
 
 		def to_hash
@@ -105,15 +106,11 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::LabwareItem:#{object_id}>"
+			"<OpenTron::LabwareItem:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
-			s = "#{self.to_s} "
-			instance_variables.each do |var_name|
-				s << "#{var_name}=#{var_name.to_s} "
-			end
-			return s
+			to_s
 		end
 	end
 
@@ -147,15 +144,11 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Well:#{object_id}>"
+			"<OpenTron::Well:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
-			s = "#{self.to_s} "
-			instance_variables.each do |var_name|
-				s << "#{var_name}=#{var_name.to_s} "
-			end
-			return s
+			to_s
 		end
 	end
 end
