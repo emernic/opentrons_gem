@@ -55,7 +55,7 @@ Save a protocol as a JSON file:
 File.open("protocol.json", 'w') {|f| f.write(p.to_json)}
 ```
 ## Limitations of current version
-- Built for OT protocol JSON schema 1.0 (which is not the final version).
+- Produces OT protocol JSON schema 1.0 (which is not the final version and is also not yet supported in the app).
     https://github.com/Opentrons/opentrons/blob/391dcebe52411c432bb6f680d8aa5952a11fe90f/shared-data/protocol-json-schema/protocol-schema.json
 - Custom containers not yet supported
 - Modules (heat and magnetic) not yet supported
