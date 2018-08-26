@@ -3,13 +3,12 @@ module OpenTrons
 	# 
 	# This version of the gem provides some basic functionality for creating and editing OpenTrons JSON-format 
 	# protocols in Ruby. The organization of the methods should be familiar to anyone who has used
-	# the official OpenTrons Python API. To serialize the protocol to json, simply run my_protocol.to_json 
-	# or my_protocol.to_hash.to_json.
+	# the official OpenTrons Python API.
 	# 
 	# Examples:
 	#     Create a protocol: p = OTProtocol.new
 	#     Create a labware item: block = p.labware.load('96-deep-well', '2', 'culture_block')
-	#     Create a tiprack: tiprack_1 = p.labware.load('tiprack-10ul', '3', 'tiprack-10ul')
+	#     Create a tiprack: tip_rack_1 = p.labware.load('tiprack-10ul', '3', 'tiprack-10ul')
 	#     Create a pipette: p10 = p.instruments.P10_Single(mount: 'left', tip_racks: [tip_rack_1])
 	#     Pick up a tip: p10.pick_up_tip()
 	#     Add an aspirate command: p10.aspirate(10, block.wells(0))
@@ -24,12 +23,11 @@ module OpenTrons
 	# Limitations of current version:
 	#     -Built for OT protocol JSON schema 1.0 (which is not the final version).
 	#         https://github.com/Opentrons/opentrons/blob/391dcebe52411c432bb6f680d8aa5952a11fe90f/shared-data/protocol-json-schema/protocol-schema.json
-	#     -Custom container creation within protocols not supported (must load onto robot beforehand)
+	#     -Custom containers yet supported
 	#     -Modules (heat and magnetic) not yet supported
 	#     -Complex liquid handling shortcuts not yet supported
 	#     -Loading and editing existing protocols from JSON not yet supported.
 	#     -Error checking not very robust
-	#     -No tests yet
 	#     -And more...
 	class OTProtocol
 		attr_accessor :protocol_schema, :robot, :designer_application, :metadata, :labware, :instruments, :commands, :trash
