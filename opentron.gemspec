@@ -7,6 +7,6 @@ Gem::Specification.new 'opentron', '0.0.3' do |s|
   s.authors     = ["Nick Emery"]
   s.email       = 'emernic@bu.edu'
   s.files       = ["lib/opentron.rb", "definitions/*"]
-  s.homepage    = 'http://rubygems.org/gems/????'
+  s.homepage    = 'https://github.com/emernic/opentron_gem'
   s.license     = 'LICENSE.txt'
 end
