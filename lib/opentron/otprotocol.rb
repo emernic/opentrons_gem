@@ -27,6 +27,7 @@ module OpenTron
 	#     -Custom container creation within protocols not supported (must load onto robot beforehand)
 	#     -Modules (heat and magnetic) not yet supported
 	#     -Complex liquid handling shortcuts not yet supported
+	#     -Loading and editing existing protocols from JSON not yet supported.
 	#     -Error checking not very robust
 	#     -No tests yet
 	#     -And more...
