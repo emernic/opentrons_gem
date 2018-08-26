@@ -64,7 +64,7 @@ File.open("protocol.json", 'w') {|f| f.write(p.to_json)}
 This gem requires Ruby.
 The gem can be installed via:
 ```sh
-gem install opentron
+gem install opentrons
 ```
 At the time of writing, support for JSON protocols in the OT2 app is still under development. If you would like to try out or contribute to this gem before then, you may find these json-to-python protocol converters useful. https://github.com/emernic/OT2_json_workarounds
 
