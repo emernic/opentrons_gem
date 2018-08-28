@@ -3,9 +3,13 @@
 This Ruby gem provides basic functionality for creating and manipulating OpenTron JSON protocols. This gem is not a product of OpenTrons. The API is designed to mirror the official OpenTrons Python API for ease of use.
 
 ## Examples
+Import the gem:
+```
+require 'opentrons'
+```
 Create a protocol:
 ```
-p = OTProtocol.new
+p = OpenTrons::OTProtocol.new
 ```
 Create a labware item: 
 ```
@@ -54,6 +58,7 @@ Save a protocol as a JSON file:
 ```
 File.open("protocol.json", 'w') {|f| f.write(p.to_json)}
 ```
+
 ## Limitations of current version
 - Produces OT protocol JSON schema 1.0 (which is not the final version and is also not yet supported in the app).
     https://github.com/Opentrons/opentrons/blob/391dcebe52411c432bb6f680d8aa5952a11fe90f/shared-data/protocol-json-schema/protocol-schema.json

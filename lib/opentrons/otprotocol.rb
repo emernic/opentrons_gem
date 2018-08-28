@@ -6,7 +6,8 @@ module OpenTrons
 	# the official OpenTrons Python API.
 	# 
 	# Examples:
-	#     Create a protocol: p = OTProtocol.new
+	#     Import the gem: require 'opentrons'
+	#     Create a protocol: p = OpenTrons::OTProtocol.new
 	#     Create a labware item: block = p.labware.load('96-deep-well', '2', 'culture_block')
 	#     Create a tiprack: tip_rack_1 = p.labware.load('tiprack-10ul', '3', 'tiprack-10ul')
 	#     Create a pipette: p10 = p.instruments.P10_Single(mount: 'left', tip_racks: [tip_rack_1])
