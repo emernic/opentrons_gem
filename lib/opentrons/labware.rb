@@ -82,6 +82,7 @@ module OpenTrons
 						end
 					end
 				end
+				return ArgumentError.new "Well #{location} is out of range."
 			elsif location.is_a? Integer
 				i = location
 				well_list.each do |column|
@@ -92,6 +93,7 @@ module OpenTrons
 						i -= 1
 					end
 				end
+				return ArgumentError.new "Well #{location} is out of range."
 			else
 				return well_list
 			end
