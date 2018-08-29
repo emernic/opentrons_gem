@@ -73,7 +73,7 @@ module OpenTrons
 
 		end
 
-		def wells(location)
+		def wells(location=nil)
 			if location.is_a? String
 				well_list.each do |column|
 					column.each do |x|
@@ -92,9 +92,9 @@ module OpenTrons
 						i -= 1
 					end
 				end
+			else
+				return well_list
 			end
-
-			raise ArgumentError.new "wells must be specified as Integer or String, not #{location.class}"
 		end
 
 		def to_hash
