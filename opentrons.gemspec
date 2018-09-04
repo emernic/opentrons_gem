@@ -1,6 +1,6 @@
-Gem::Specification.new 'opentrons', '0.0.6' do |s|
+Gem::Specification.new 'opentrons', '0.0.7' do |s|
   s.name        = 'opentrons'
-  s.version     = '0.0.6'
+  s.version     = '0.0.7'
   s.date        = '2018-08-28'
   s.summary     = "Provides a variety of functionalities for writing JSON OpenTrons protocols in Ruby. This gem is not a product of OpenTrons."
   s.description = "Provides a variety of functionalities for writing JSON OpenTrons protocols in Ruby. This gem is not a product of OpenTrons."

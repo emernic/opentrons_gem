@@ -5,7 +5,7 @@ module OpenTrons
 		def initialize(protocol)
 			@protocol = protocol
 			@labware_hash = {}
-
+			
 			#TODO: Better system for dealing with labware defs, including user-specified.
 			@labware_definitions = []
 			directory = File.expand_path(File.dirname(__FILE__))
@@ -14,7 +14,7 @@ module OpenTrons
 				labware_definitions << JSON.parse(File.read(filename))
 			end
 		end
-
+		
 		def load(model, slot, display_name="")
 			generated_id = ""
 			loop do
