@@ -45,7 +45,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Labware:#{object_id}>"
+			"<OpenTrons::Labware:#{object_id}>"
 		end
 
 		def inspect
@@ -95,7 +95,7 @@ module OpenTrons
 				end
 				return ArgumentError.new "Well #{location} is out of range."
 			else
-				return well_list
+				return well_list.flatten
 			end
 		end
 
@@ -108,7 +108,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::LabwareItem:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::LabwareItem:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
@@ -146,7 +146,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Well:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::Well:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect

@@ -63,7 +63,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Instruments:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::Instruments:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
@@ -92,7 +92,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Pipette:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::Pipette:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect

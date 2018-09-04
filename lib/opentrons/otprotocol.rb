@@ -71,7 +71,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::OTProtocol:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::OTProtocol:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect

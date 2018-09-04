@@ -13,7 +13,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Commands:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::Commands:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
@@ -38,7 +38,7 @@ module OpenTrons
 		end
 
 		def to_s
-			"<OpenTron::Command:0x#{self.__id__.to_s(16)}>"
+			"<OpenTrons::Command:0x#{self.__id__.to_s(16)}>"
 		end
 
 		def inspect
