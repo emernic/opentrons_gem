@@ -31,7 +31,7 @@ module OpenTrons
 	#     -Error checking not very robust
 	#     -And more...
 	class OTProtocol
-		attr_accessor :protocol_schema, :robot, :designer_application, :metadata, :labware, :instruments, :commands, :trash
+		attr_accessor :protocol_schema, :robot, :designer_application, :metadata, :labware, :modules, :instruments, :commands, :trash
 		
 		def initialize(params: {})
 			@protocol_schema = params.fetch(:protocol_schema, "1.0.0")
@@ -40,6 +40,8 @@ module OpenTrons
 			@metadata = params.fetch(:metadata, {})
 
 			@labware = params.fetch(:labware, Labware.new(self))
+			@modules = params.fetch(:modules, Modules.new(self))
+
 			@trash = labware.load('fixed-trash', '12', 'Trash')
 
 			@instruments = params.fetch(:instruments, Instruments.new(self))
@@ -57,6 +59,8 @@ module OpenTrons
 			protocol_hash["metadata"] = metadata
 
 			protocol_hash["labware"] = labware.to_hash
+
+			protocol_hash["modules"] = modules.to_hash
 
 			protocol_hash["pipettes"] = instruments.to_hash
 
