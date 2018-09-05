@@ -83,6 +83,21 @@ module OpenTrons
 		end
 	end
 
+	class SetTemp < Command
+		def initialize(module_item, temp)
+			params_hash = {}
+			params_hash['module'] = module_item.modules.module_hash.key module_item
+			params_hash['temp'] = temp
+			super("set-temp", params_hash)
+		end
+	end
+
+	class WaitTemp < Command
+		def initialize(module_item)
+			super("wait-temp", {'module': (module_item.modules.module_hash.key module_item)})
+		end
+	end
+
 	class Aspirate < VolumeCommand
 		def initialize(pipette, volume, location)
 			super("aspirate", pipette, volume, location)
